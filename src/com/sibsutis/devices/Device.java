@@ -1,16 +1,32 @@
-package com.sibsutis.devices;
+public abstract class Device implements Printable {
+	private int id;
+	private int price;
+	private String ip;
 
-public abstract class Device {
-    protected String brand;
+	public Device(int id, int price, String ip) {
+		this.id = id;
+		this.price = price;
+		this.ip = ip;
+	}
 
-    public Device(String brand) {
-        this.brand = brand;
-    }
 
-    public String getBrand() {
-        return brand;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public abstract void turnOn();
-    public abstract void turnOff();
+	public int getPrice() {
+		return price;
+	}
+
+	public String getIp() {
+		return ip;
+	}
+
+	public String print() {
+		String ipInfo = (ip != null) ? ip : "null";
+		return "ID: " + id + ", Цена: " + price + ", IP: " + ipInfo + ", Тип: " + getDeviceType();
+	}
+
+
+	public abstract String getDeviceType();
 }
