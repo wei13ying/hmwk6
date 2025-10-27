@@ -1,3 +1,7 @@
+package com.sibsutis.devices;
+
+import com.sibsutis.Printable;
+
 public abstract class Device implements Printable {
 	private int id;
 	private int price;
@@ -29,4 +33,21 @@ public abstract class Device implements Printable {
 
 
 	public abstract String getDeviceType();
+
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null || getClass() != obj.getClass()) return false;
+		Device other = (Device) obj;
+		return id == other.id &&
+			price == other.price &&
+			(ip == null ? other.ip == null : ip.equals(other.ip));
+	}
+
+	public int hashCode() {
+		int result = id;
+		result = 31 * result + price;
+		result = 31 * result + (ip != null ? ip.hashCode() : 0);
+		return result;
+	}
 }
+
