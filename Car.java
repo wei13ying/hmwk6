@@ -46,7 +46,33 @@ public class Car {
     public String getRegNumber() {
         return regNumber;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public void setMarka(String marka) {
+        this.marka = marka;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setRegNumber(String regNumber) {
+        this.regNumber = regNumber;
+    }
 
     public String toString() {
         return "Машина: " + marka + " " + model + ", " + year + " г., цвет: " + color + ", цена: " + price + " руб.";
