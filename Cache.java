@@ -9,4 +9,13 @@ public class Cache<T> {
 		this.capacity = n;
 		this.items = new ArrayList<>(n);
 	}
+
+	 public void add(T item) {
+		if (items.size() < capacity) {
+		items.add(item);
+		} else {
+			items.remove(0);
+			items.add(item);
+		}
+	}
 }
