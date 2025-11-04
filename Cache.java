@@ -47,4 +47,8 @@ public class Cache<T> {
 		}
 		return items.get(i);
 	}
+
+	public List<T> getItems() {
+		return items;
+	}
 }
